@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<style>
+   *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+   body{
+    background-color: #765898;
+   }
+   form{
+    background-color: white;
+    /*cor de fundo da div*/
+    max-width: 500px;
+    /*largura máxima, design responsivo*/
+    width: 70%;
+    /*largura 70%*/
+    padding: 20px;
+    position: absolute;
+    
+    /*para centralizar a div, -50% para tirar a diferença por ela surgir no ponto superior esquerdo*/          
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+    border-radius: 20px;
+
+   }
+   .logo{
+        color: #765898;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        font-family: 'Poppins', sans-serif;
+        font-size: 20px;
+        font-weight: 400;
+        
+        
+   }
+
+   .logo i{
+    color: #52d053;
+    font-size: 30px;
+   }
+   
+   /*estilizando os inputs da form ao mesmo tempo*/
+   form input[type=text], form input[type=password]{
+     width: 100%;
+     /*largura em relação a div*/
+     height: 45px;
+     /*altura*/
+     border: 1px solid #52d053;
+     /*borda ao redor dos inputs, primeiro a largura, o tipo, e a cor*/
+     padding-left: 10px;
+     /*desgrudar o texto das caixas do input*/
+     margin: 10px 0;
+     /*margem em relação ao proximo elemento div cima baixo 10px direita e esquerda 0*/
+     outline: 0;
+     /*não pôr ua borda exagerada ao clica no input*/
+     border-radius: 20px;
+
+     font-family: 'Poppins', sans-serif;
+
+     color: #765898;
+   }
+   /*estilizando o input submit*/
+   form input[type=submit]{
+     width: 100%;
+     /*ocupa largura de 100%*/
+     height: 40px;
+     /*altura de 30px*/
+     cursor: pointer;
+    /*quando passar o cursor por cima ele se torna pointer*/
+    background-color: #765898;
+    color: white;
+    /*color da fonte*/
+    border: 0;
+    /*sem bordas visiveis*/
+    border-radius: 20px;
+    /*arredendodamento das bordas*/
+    transition: 0.2s;
+
+    font-family: 'Poppins', sans-serif;
+   }
+   /*efeito quando passar o mouse encima*/
+   form input[type=submit]:hover{
+    background-color: #52d053;
+    /*bg-color: muda*/
+   }
+   
+
+   /*estilizando a div do formulario */
+
+</style><!--estilizando direto no html com a tag style(resetando e definindo padrões)-->
+<body>
+    <form action="" method="get">
+           <a href="#" class="logo"><i class='bx bx-ghost'></i>Login</a>
+           <input type="text" name="e-mail"  id="email" placeholder="insira seu email...">
+           <input type="password" name="senha" id="password" placeholder="digite sua senha...">
+           <input type="submit" name="acao" value="Enviar" id="submit">
+           <!--chama a função no onclick-->
+        <!--input para entrada de texto (email)-->
+        <!--input para senha-->
+        <!--input para o submit das entradas-->
+    </form>
+    <!--criando um script para ficar com a mesma cor do botao ao clicar-->
+    <script>
+        //declara uma variavel email que pega o id email do input que pede o meu email
+         const email = document.getElementById('email');
+         //cria um evento listener , com o parametro focus, criando uma arrow function
+         const senha = document.getElementById('password');
+
+         
+
+        
+         email.addEventListener('focus',()=>{
+               email.style.borderColor =  "#52d053";
+         })
+
+         email.addEventListener('blur',()=>{
+               email.style.borderColor =  "#ccc";
+         })
+
+         //realizando o mesmo com o password
+
+         senha.addEventListener('focus',()=>{
+               senha.style.borderColor =  "#52d053";
+         })
+
+         senha.addEventListener('blur',()=>{
+               senha.style.borderColor =  "#ccc";
+         })
+        
+        
+    </script>
+</body>
+</html>
